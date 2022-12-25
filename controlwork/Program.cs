@@ -29,3 +29,33 @@ string[] CreateNewArray(string[] arr)
     }
     return result;
 }
+
+void PrintArray1(string[] array)
+{
+    Console.Write("[");
+    if (array[0] != string.Empty)
+    {
+        Console.Write($"{array[0]}");
+        for (int i = 1; i < array.Length; i++)
+        {
+           if (array[i] != string.Empty)
+            if (i < array.Length - 1) Console.Write($", {array[i]} ");
+            else Console.Write($", {array[i]}");
+        }
+    }
+    else
+    {
+        for (int i = 0; i < array.Length; i++)
+        {
+            if (array[i] != string.Empty)
+                if (i < array.Length - 1) Console.Write($"{array[i]} ,");
+                else Console.Write($"{array[i]}");
+        }
+    }
+
+    Console.WriteLine("]");
+}
+
+PrintArray(array);
+string[] resultarray = CreateNewArray(array);
+PrintArray1(resultarray);
