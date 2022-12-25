@@ -12,3 +12,20 @@ void PrintArray(string[] array)
     }
     Console.WriteLine("]");
 }
+
+string[] CreateNewArray(string[] arr)
+{
+    string[] result = new string[arr.Length];
+
+    for (int i = 0; i < arr.Length; i++)
+    {
+        string arrayElement = arr[i];
+        if (arrayElement.Length <= 3)
+        {
+            result[i] = arrayElement;
+        }
+        else
+            result[i] = string.Empty;
+    }
+    return result;
+}
